@@ -1,10 +1,10 @@
 resource "random_id" "random" {
   byte_length = 2
-  count       = 2
+  count       = var.repo_count
 }
 
 resource "github_repository" "mtc_repo-1" {
-  count       = 2
+  count       = var.repo_count
   name        = "mtc-repo-1-${random_id.random[count.index].dec}"
   description = "Code for MTC"
   visibility  = "public"
@@ -12,7 +12,7 @@ resource "github_repository" "mtc_repo-1" {
 }
 
 resource "github_repository_file" "readme" {
-  count               = 2
+  count               = var.repo_count
   repository          = github_repository.mtc_repo-1[count.index].name
   branch              = "main"
   file                = "README.md"
@@ -21,7 +21,7 @@ resource "github_repository_file" "readme" {
 }
 
 resource "github_repository_file" "index" {
-  count               = 2
+  count               = var.repo_count
   repository          = github_repository.mtc_repo-1[count.index].name
   branch              = "main"
   file                = "index.html"
