@@ -29,7 +29,7 @@ resource "github_repository_file" "index" {
   overwrite_on_create = true
 }
 
-output "repo-name" {
-  value       = github_repository.mtc_repo-1[*].name
+output "clone-urls" {
+  value       = { for i in github_repository.mtc_repo-1[*] : i.name => i.http_clone_url }
   description = "Repository Names"
 }
