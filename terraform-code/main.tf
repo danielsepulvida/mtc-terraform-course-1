@@ -4,6 +4,10 @@ resource "github_repository" "mtc-repo-1" {
   description = "${each.value} Code for MTC"
   visibility  = var.env == "dev" ? "private" : "public"
   auto_init   = true
+  provisioner "local-exec" {
+    command = "gh repo view ${self.name} --web"
+    
+  }
 }
 
 resource "github_repository_file" "readme" {
@@ -12,12 +16,13 @@ resource "github_repository_file" "readme" {
   branch     = "main"
   file       = "README.md"
   content    = "# This ${var.env} repository is for infra developers"
+  overwrite_on_create = true
 }
 
 resource "github_repository_file" "index" {
   for_each            = var.repos
   repository          = github_repository.mtc-repo-1[each.key].name
-  branch              = main
+  branch              = "main"
   file                = "index.html"
   content             = "Hello Terraform!"
   overwrite_on_create = true
