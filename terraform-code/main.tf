@@ -6,16 +6,22 @@ resource "github_repository" "mtc-repo-1" {
   auto_init   = true
   provisioner "local-exec" {
     command = "gh repo view ${self.name} --web"
-    
+  }
+  provisioner "local-exec" {
+    command = "gh repo clone ${self.name}"
+  }
+  provisioner "local-exec" {
+    when = destroy
+    command = "rm -rf ${self.name}"
   }
 }
 
 resource "github_repository_file" "readme" {
-  for_each   = var.repos
-  repository = github_repository.mtc-repo-1[each.key].name
-  branch     = "main"
-  file       = "README.md"
-  content    = "# This ${var.env} repository is for infra developers"
+  for_each            = var.repos
+  repository          = github_repository.mtc-repo-1[each.key].name
+  branch              = "main"
+  file                = "README.md"
+  content             = "# This ${var.env} repository is for infra developers"
   overwrite_on_create = true
 }
 
