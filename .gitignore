@@ -1,3 +1,6 @@
+# Include repo
+*.*/mtc-*
+
 # Local .terraform directories
 .terraform/
 
