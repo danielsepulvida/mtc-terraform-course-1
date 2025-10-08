@@ -56,7 +56,7 @@ resource "github_repository_file" "main" {
   }
 }
 
-moved {
-  from = github_repository_file.index
-  to   = github_repository_file.main
-}
+# moved {
+#   from = github_repository_file.index
+#   to   = github_repository_file.main
+# }
