@@ -24,14 +24,14 @@ resource "terraform_data" "repo-clone" {
 }
 
 resource "github_repository_file" "readme" {
-  for_each            = var.repos
-  repository          = github_repository.mtc-repo-1[each.key].name
-  branch              = "main"
-  file                = "README.md"
+  for_each   = var.repos
+  repository = github_repository.mtc-repo-1[each.key].name
+  branch     = "main"
+  file       = "README.md"
   content = templatefile("templates/readme.tftpl", {
-    env = var.env,
-    lang = each.value.lang,
-    repo = each.key,
+    env        = var.env,
+    lang       = each.value.lang,
+    repo       = each.key,
     authorname = data.github_user.current.name
   })
   overwrite_on_create = true
@@ -54,4 +54,9 @@ resource "github_repository_file" "main" {
       content,
     ]
   }
+}
+
+moved {
+  from = github_repository_file.index
+  to   = github_repository_file.main
 }
