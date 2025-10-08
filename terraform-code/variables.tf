@@ -18,7 +18,7 @@ variable "env" {
 }
 
 variable "repos" {
-  type        = set(string)
+  type        = map(map(string))
   description = "Repositories"
   validation {
     condition     = length(var.repos) <= var.repo_max

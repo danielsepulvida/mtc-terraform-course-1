@@ -1,7 +1,7 @@
 resource "github_repository" "mtc-repo-1" {
-  for_each    = toset(["infra", "backend"])
+  for_each    = var.repos
   name        = "mtc-repo-1-${each.key}"
-  description = "${each.value} Code for MTC"
+  description = "${each.value.lang} Code for MTC"
   visibility  = var.env == "dev" ? "private" : "public"
   auto_init   = true
   provisioner "local-exec" {
@@ -28,21 +28,31 @@ resource "github_repository_file" "readme" {
   repository          = github_repository.mtc-repo-1[each.key].name
   branch              = "main"
   file                = "README.md"
-  content             = "# This ${var.env} repository is for infra developers"
+  content             = "# This is a ${var.env} ${each.value.lang} repository is for ${each.key} developers"
   overwrite_on_create = true
+    lifecycle {
+    ignore_changes = [
+      content,
+    ]
+  }
 }
 
 resource "github_repository_file" "index" {
   for_each            = var.repos
   repository          = github_repository.mtc-repo-1[each.key].name
   branch              = "main"
-  file                = "index.html"
-  content             = "Hello Terraform!"
+  file                = each.value.filename
+  content             = "# Hello ${each.value.lang}"
   overwrite_on_create = true
+  lifecycle {
+    ignore_changes = [
+      content,
+    ]
+  }
 }
 
 output "clone-urls" {
-  value       = { for i in github_repository.mtc-repo-1 : i.name => i.http_clone_url }
+  value       = { for i in github_repository.mtc-repo-1 : i.name => [i.ssh_clone_url, i.http_clone_url] }
   description = "Repository Names and URL"
   sensitive   = false
 }
