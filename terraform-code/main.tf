@@ -4,6 +4,13 @@ resource "github_repository" "mtc-repo-1" {
   description = "${each.value.lang} Code for MTC"
   visibility  = var.env == "dev" ? "private" : "public"
   auto_init   = true
+#  pages {
+#    source {
+#      branch = "main"
+#      path   = "/"
+#    }
+#  }
+
   provisioner "local-exec" {
     command = "gh repo view ${self.name} --web"
   }
