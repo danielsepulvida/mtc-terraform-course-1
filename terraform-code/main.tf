@@ -5,10 +5,13 @@ resource "github_repository" "mtc-repo-1" {
   visibility  = "public"
   #visibility  = var.env == "dev" ? "private" : "public"
   auto_init = true
-  pages {
-    source {
-      branch = "main"
-      path   = "/"
+  dynamic "pages" {
+    for_each = each.value.pages ? [1] : []
+    content {
+      source {
+        branch = "main"
+        path   = "/"
+      }
     }
   }
 

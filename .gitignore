@@ -1,5 +1,5 @@
 # Include repo
-*.*/mtc-*
+**/mtc-*/
 
 # Local .terraform directories
 .terraform/
@@ -25,6 +25,9 @@ override.tf
 override.tf.json
 *_override.tf
 *_override.tf.json
+
+# Terraform lock
+.terraform.lock.hcl
 
 # Ignore transient lock info files created by terraform apply
 .terraform.tfstate.lock.info

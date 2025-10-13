@@ -3,10 +3,12 @@ env      = "dev"
 repos = {
   infra = {
     lang     = "terraform",
-    filename = "main.tf"
+    filename = "main.tf",
+    pages    = true
   },
   backend = {
     lang     = "python",
-    filename = "main.py"
+    filename = "main.py",
+    pages    = false
   }
 }
