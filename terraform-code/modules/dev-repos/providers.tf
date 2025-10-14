@@ -7,7 +7,7 @@ terraform {
   }
 }
 
-# Configure the GitHub Provider
-provider "github" {
-  owner = "danielsepulvida"
-}
+# # Configure the GitHub Provider
+# provider "github" {
+#   owner = "danielsepulvida"
+# }
