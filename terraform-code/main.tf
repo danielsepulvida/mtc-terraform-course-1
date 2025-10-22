@@ -24,8 +24,12 @@ module "repos" {
 
 module "deploy-key" {
   source    = "./modules/deploy-key"
-  for_each = toset(flatten([ for k, v in module.repos : keys(v.clone-urls) if k == "dev" ]))
+  for_each  = toset(flatten([for k, v in module.repos : keys(v.clone-urls) if k == "dev"]))
   repo_name = each.key
+}
+
+module "info-page" {
+  source    = "./modules/info-page"
 }
 
 output "repo-info" {
@@ -33,5 +37,5 @@ output "repo-info" {
 }
 
 output "repo-list" {
-  value = flatten([ for k, v in module.repos : keys(v.clone-urls) if k =="dev" ])
+  value = flatten([for k, v in module.repos : keys(v.clone-urls) if k == "dev"])
 }
