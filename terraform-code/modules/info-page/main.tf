@@ -26,8 +26,14 @@ resource "github_repository_file" "this" {
   file                = "index.md"
   overwrite_on_create = true
   content = templatefile("${path.module}/templates/index.tftpl", {
-    avatar = data.github_user.current.avatar_url,
+    #    avatar = "https://cdn.jsdelivr.net/gh/alohe/avatars/png/vibrent_6.png",# data.github_user.current.avatar_url,
+    avatar = data.github_user.current.avatar_url, #"https://avatars.githubusercontent.com/u/23561793?v=4",# data.github_user.current.avatar_url,
     name   = data.github_user.current.name,
     date   = time_static.this.year
+    repos  = var.repos
   })
+}
+
+variable "repos" {
+  type = map(any)
 }
