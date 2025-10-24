@@ -29,7 +29,7 @@ module "deploy-key" {
 }
 
 module "info-page" {
-  source    = "./modules/info-page"
+  source = "./modules/info-page"
 }
 
 output "repo-info" {
