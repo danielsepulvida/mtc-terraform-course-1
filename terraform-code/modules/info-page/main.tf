@@ -33,7 +33,3 @@ resource "github_repository_file" "this" {
     repos  = var.repos
   })
 }
-
-variable "repos" {
-  type = map(any)
-}
