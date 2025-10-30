@@ -4,13 +4,13 @@
 #   }
 # }
 
-terraform { 
-  cloud { 
-    
-    organization = "Faith83" 
+terraform {
+  cloud {
 
-    workspaces { 
-      name = "dev" 
-    } 
-  } 
+    organization = "Faith83"
+
+    workspaces {
+      name = "dev"
+    }
+  }
 }
