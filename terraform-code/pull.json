@@ -1,0 +1,551 @@
+{
+  "version": 4,
+  "terraform_version": "1.13.4",
+  "serial": 3,
+  "lineage": "6a61b571-c6c7-1c80-e034-0ea54798d2fb",
+  "outputs": {
+    "repo-info": {
+      "value": {
+        "dev": {
+          "mtc-infra-dev": {
+            "http-clone_url": "https://github.com/danielsepulvida/mtc-infra-dev.git",
+            "pages-url": "no page",
+            "ssh-clone_url": "git@github.com:danielsepulvida/mtc-infra-dev.git"
+          }
+        },
+        "prod": {
+          "mtc-infra-prod": {
+            "http-clone_url": "https://github.com/danielsepulvida/mtc-infra-prod.git",
+            "pages-url": "no page",
+            "ssh-clone_url": "git@github.com:danielsepulvida/mtc-infra-prod.git"
+          }
+        }
+      },
+      "type": [
+        "object",
+        {
+          "dev": [
+            "object",
+            {
+              "mtc-infra-dev": [
+                "object",
+                {
+                  "http-clone_url": "string",
+                  "pages-url": "string",
+                  "ssh-clone_url": "string"
+                }
+              ]
+            }
+          ],
+          "prod": [
+            "object",
+            {
+              "mtc-infra-prod": [
+                "object",
+                {
+                  "http-clone_url": "string",
+                  "pages-url": "string",
+                  "ssh-clone_url": "string"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "repo-list": {
+      "value": [
+        "mtc-infra-dev"
+      ],
+      "type": [
+        "tuple",
+        [
+          "string"
+        ]
+      ]
+    }
+  },
+  "resources": [
+    {
+      "module": "module.repos[\"dev\"]",
+      "mode": "data",
+      "type": "github_user",
+      "name": "current",
+      "provider": "provider[\"registry.terraform.io/integrations/github\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "avatar_url": "https://avatars.githubusercontent.com/u/23561793?v=4",
+            "bio": "",
+            "blog": "",
+            "company": "",
+            "created_at": "2016-11-18 20:08:02 +0000 UTC",
+            "email": "",
+            "followers": 5,
+            "following": 75,
+            "gpg_keys": [],
+            "gravatar_id": "",
+            "id": "23561793",
+            "location": "Rio de Janeiro",
+            "login": "danielsepulvida",
+            "name": "Daniel Sepulvida",
+            "node_id": "MDQ6VXNlcjIzNTYxNzkz",
+            "public_gists": 1,
+            "public_repos": 19,
+            "site_admin": false,
+            "ssh_keys": [
+              "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGqbVxvJjRvtuAFowpwDS2Dc5/XrbAXKCJVI4jp1YzL/"
+            ],
+            "suspended_at": "0001-01-01 00:00:00 +0000 UTC",
+            "updated_at": "2025-10-24 02:05:53 +0000 UTC",
+            "username": null
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0
+        }
+      ]
+    },
+    {
+      "module": "module.repos[\"dev\"]",
+      "mode": "managed",
+      "type": "github_repository",
+      "name": "mtc-repo-1",
+      "provider": "provider[\"registry.terraform.io/integrations/github\"]",
+      "instances": [
+        {
+          "index_key": "infra",
+          "schema_version": 1,
+          "attributes": {
+            "allow_auto_merge": false,
+            "allow_merge_commit": true,
+            "allow_rebase_merge": true,
+            "allow_squash_merge": true,
+            "allow_update_branch": false,
+            "archive_on_destroy": null,
+            "archived": false,
+            "auto_init": true,
+            "default_branch": "main",
+            "delete_branch_on_merge": false,
+            "description": "terraform Code for MTC",
+            "etag": "W/\"b27f678d4a5708d9ed370a18a144c52127957b1cb4c4379b8adf158714131042\"",
+            "full_name": "danielsepulvida/mtc-infra-dev",
+            "git_clone_url": "git://github.com/danielsepulvida/mtc-infra-dev.git",
+            "gitignore_template": null,
+            "has_discussions": false,
+            "has_downloads": false,
+            "has_issues": false,
+            "has_projects": false,
+            "has_wiki": false,
+            "homepage_url": "",
+            "html_url": "https://github.com/danielsepulvida/mtc-infra-dev",
+            "http_clone_url": "https://github.com/danielsepulvida/mtc-infra-dev.git",
+            "id": "mtc-infra-dev",
+            "ignore_vulnerability_alerts_during_read": null,
+            "is_template": false,
+            "license_template": null,
+            "merge_commit_message": "PR_TITLE",
+            "merge_commit_title": "MERGE_MESSAGE",
+            "name": "mtc-infra-dev",
+            "node_id": "R_kgDOQMJ87A",
+            "pages": [],
+            "primary_language": "",
+            "private": false,
+            "repo_id": 1086487788,
+            "security_and_analysis": [
+              {
+                "advanced_security": [],
+                "secret_scanning": [
+                  {
+                    "status": "enabled"
+                  }
+                ],
+                "secret_scanning_push_protection": [
+                  {
+                    "status": "enabled"
+                  }
+                ]
+              }
+            ],
+            "squash_merge_commit_message": "COMMIT_MESSAGES",
+            "squash_merge_commit_title": "COMMIT_OR_PR_TITLE",
+            "ssh_clone_url": "git@github.com:danielsepulvida/mtc-infra-dev.git",
+            "svn_url": "https://github.com/danielsepulvida/mtc-infra-dev",
+            "template": [],
+            "topics": [],
+            "visibility": "public",
+            "vulnerability_alerts": false,
+            "web_commit_signoff_required": false
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJzY2hlbWFfdmVyc2lvbiI6IjEifQ=="
+        }
+      ]
+    },
+    {
+      "module": "module.repos[\"dev\"]",
+      "mode": "managed",
+      "type": "github_repository_file",
+      "name": "main",
+      "provider": "provider[\"registry.terraform.io/integrations/github\"]",
+      "instances": [
+        {
+          "index_key": "infra",
+          "schema_version": 0,
+          "attributes": {
+            "autocreate_branch": null,
+            "autocreate_branch_source_branch": null,
+            "autocreate_branch_source_sha": null,
+            "branch": "main",
+            "commit_author": null,
+            "commit_email": null,
+            "commit_message": "Add main.tf",
+            "commit_sha": "9bec30b446a1b0a2c162ea34578fb8cfc292dbf6",
+            "content": "# Hello terraform",
+            "file": "main.tf",
+            "id": "mtc-infra-dev/main.tf",
+            "overwrite_on_create": true,
+            "ref": "main",
+            "repository": "mtc-infra-dev",
+            "sha": "ecf53310d4c11a779b64983042dbb8084ec792e7"
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "bnVsbA==",
+          "dependencies": [
+            "module.repos.github_repository.mtc-repo-1"
+          ]
+        }
+      ]
+    },
+    {
+      "module": "module.repos[\"dev\"]",
+      "mode": "managed",
+      "type": "github_repository_file",
+      "name": "readme",
+      "provider": "provider[\"registry.terraform.io/integrations/github\"]",
+      "instances": [
+        {
+          "index_key": "infra",
+          "schema_version": 0,
+          "attributes": {
+            "autocreate_branch": null,
+            "autocreate_branch_source_branch": null,
+            "autocreate_branch_source_sha": null,
+            "branch": "main",
+            "commit_author": null,
+            "commit_email": null,
+            "commit_message": "Add README.md",
+            "commit_sha": "575377f4549f0c88d2c6956320c201b69326f63d",
+            "content": "# This is a dev terraform repository is for infra developers.\nThe infra was last modified by: Daniel Sepulvida\n",
+            "file": "README.md",
+            "id": "mtc-infra-dev/README.md",
+            "overwrite_on_create": true,
+            "ref": "main",
+            "repository": "mtc-infra-dev",
+            "sha": "0bf21a962f1c0ac180499f946fd2a9309898b3b8"
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "bnVsbA==",
+          "dependencies": [
+            "module.repos.data.github_user.current",
+            "module.repos.github_repository.mtc-repo-1"
+          ]
+        }
+      ]
+    },
+    {
+      "module": "module.repos[\"dev\"]",
+      "mode": "managed",
+      "type": "terraform_data",
+      "name": "repo-clone",
+      "provider": "provider[\"terraform.io/builtin/terraform\"]",
+      "instances": [
+        {
+          "index_key": "infra",
+          "schema_version": 0,
+          "attributes": {
+            "id": "cc9ec8de-0409-4daa-5b2a-f1dc7ba3fd6d",
+            "input": null,
+            "output": null,
+            "triggers_replace": null
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "dependencies": [
+            "module.repos.data.github_user.current",
+            "module.repos.github_repository.mtc-repo-1",
+            "module.repos.github_repository_file.main",
+            "module.repos.github_repository_file.readme"
+          ]
+        }
+      ]
+    },
+    {
+      "module": "module.repos[\"prod\"]",
+      "mode": "data",
+      "type": "github_user",
+      "name": "current",
+      "provider": "provider[\"registry.terraform.io/integrations/github\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "avatar_url": "https://avatars.githubusercontent.com/u/23561793?v=4",
+            "bio": "",
+            "blog": "",
+            "company": "",
+            "created_at": "2016-11-18 20:08:02 +0000 UTC",
+            "email": "",
+            "followers": 5,
+            "following": 75,
+            "gpg_keys": [],
+            "gravatar_id": "",
+            "id": "23561793",
+            "location": "Rio de Janeiro",
+            "login": "danielsepulvida",
+            "name": "Daniel Sepulvida",
+            "node_id": "MDQ6VXNlcjIzNTYxNzkz",
+            "public_gists": 1,
+            "public_repos": 19,
+            "site_admin": false,
+            "ssh_keys": [
+              "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGqbVxvJjRvtuAFowpwDS2Dc5/XrbAXKCJVI4jp1YzL/"
+            ],
+            "suspended_at": "0001-01-01 00:00:00 +0000 UTC",
+            "updated_at": "2025-10-24 02:05:53 +0000 UTC",
+            "username": null
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0
+        }
+      ]
+    },
+    {
+      "module": "module.repos[\"prod\"]",
+      "mode": "managed",
+      "type": "github_repository",
+      "name": "mtc-repo-1",
+      "provider": "provider[\"registry.terraform.io/integrations/github\"]",
+      "instances": [
+        {
+          "index_key": "infra",
+          "schema_version": 1,
+          "attributes": {
+            "allow_auto_merge": false,
+            "allow_merge_commit": true,
+            "allow_rebase_merge": true,
+            "allow_squash_merge": true,
+            "allow_update_branch": false,
+            "archive_on_destroy": null,
+            "archived": false,
+            "auto_init": true,
+            "default_branch": "main",
+            "delete_branch_on_merge": false,
+            "description": "terraform Code for MTC",
+            "etag": "W/\"9f7ea06d16c3ea140ba85d7aae394aa21a83819dee76978d31162375e9c16c5e\"",
+            "full_name": "danielsepulvida/mtc-infra-prod",
+            "git_clone_url": "git://github.com/danielsepulvida/mtc-infra-prod.git",
+            "gitignore_template": null,
+            "has_discussions": false,
+            "has_downloads": false,
+            "has_issues": false,
+            "has_projects": false,
+            "has_wiki": false,
+            "homepage_url": "",
+            "html_url": "https://github.com/danielsepulvida/mtc-infra-prod",
+            "http_clone_url": "https://github.com/danielsepulvida/mtc-infra-prod.git",
+            "id": "mtc-infra-prod",
+            "ignore_vulnerability_alerts_during_read": null,
+            "is_template": false,
+            "license_template": null,
+            "merge_commit_message": "PR_TITLE",
+            "merge_commit_title": "MERGE_MESSAGE",
+            "name": "mtc-infra-prod",
+            "node_id": "R_kgDOQMJ8vw",
+            "pages": [],
+            "primary_language": "",
+            "private": false,
+            "repo_id": 1086487743,
+            "security_and_analysis": [
+              {
+                "advanced_security": [],
+                "secret_scanning": [
+                  {
+                    "status": "enabled"
+                  }
+                ],
+                "secret_scanning_push_protection": [
+                  {
+                    "status": "enabled"
+                  }
+                ]
+              }
+            ],
+            "squash_merge_commit_message": "COMMIT_MESSAGES",
+            "squash_merge_commit_title": "COMMIT_OR_PR_TITLE",
+            "ssh_clone_url": "git@github.com:danielsepulvida/mtc-infra-prod.git",
+            "svn_url": "https://github.com/danielsepulvida/mtc-infra-prod",
+            "template": [],
+            "topics": [],
+            "visibility": "public",
+            "vulnerability_alerts": false,
+            "web_commit_signoff_required": false
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJzY2hlbWFfdmVyc2lvbiI6IjEifQ=="
+        }
+      ]
+    },
+    {
+      "module": "module.repos[\"prod\"]",
+      "mode": "managed",
+      "type": "github_repository_file",
+      "name": "main",
+      "provider": "provider[\"registry.terraform.io/integrations/github\"]",
+      "instances": [
+        {
+          "index_key": "infra",
+          "schema_version": 0,
+          "attributes": {
+            "autocreate_branch": null,
+            "autocreate_branch_source_branch": null,
+            "autocreate_branch_source_sha": null,
+            "branch": "main",
+            "commit_author": null,
+            "commit_email": null,
+            "commit_message": "Add main.tf",
+            "commit_sha": "7c32ae0fee40a8cd2812b4b87a9dd743a598cc3e",
+            "content": "# Hello terraform",
+            "file": "main.tf",
+            "id": "mtc-infra-prod/main.tf",
+            "overwrite_on_create": true,
+            "ref": "main",
+            "repository": "mtc-infra-prod",
+            "sha": "ecf53310d4c11a779b64983042dbb8084ec792e7"
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "bnVsbA==",
+          "dependencies": [
+            "module.repos.github_repository.mtc-repo-1"
+          ]
+        }
+      ]
+    },
+    {
+      "module": "module.repos[\"prod\"]",
+      "mode": "managed",
+      "type": "github_repository_file",
+      "name": "readme",
+      "provider": "provider[\"registry.terraform.io/integrations/github\"]",
+      "instances": [
+        {
+          "index_key": "infra",
+          "schema_version": 0,
+          "attributes": {
+            "autocreate_branch": null,
+            "autocreate_branch_source_branch": null,
+            "autocreate_branch_source_sha": null,
+            "branch": "main",
+            "commit_author": null,
+            "commit_email": null,
+            "commit_message": "Add README.md",
+            "commit_sha": "4b63fd81f70461d09703a2018b25088dbb663723",
+            "content": "# This is a prod terraform repository is for infra developers.\nThe infra was last modified by: Daniel Sepulvida\n",
+            "file": "README.md",
+            "id": "mtc-infra-prod/README.md",
+            "overwrite_on_create": true,
+            "ref": "main",
+            "repository": "mtc-infra-prod",
+            "sha": "f78a0240101b9e1dbfcad5955bcb965f579cb85e"
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "bnVsbA==",
+          "dependencies": [
+            "module.repos.data.github_user.current",
+            "module.repos.github_repository.mtc-repo-1"
+          ]
+        }
+      ]
+    },
+    {
+      "module": "module.repos[\"prod\"]",
+      "mode": "managed",
+      "type": "terraform_data",
+      "name": "repo-clone",
+      "provider": "provider[\"terraform.io/builtin/terraform\"]",
+      "instances": [
+        {
+          "index_key": "infra",
+          "schema_version": 0,
+          "attributes": {
+            "id": "dedea909-f85f-de1a-2e47-037844acebf1",
+            "input": null,
+            "output": null,
+            "triggers_replace": null
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "dependencies": [
+            "module.repos.data.github_user.current",
+            "module.repos.github_repository.mtc-repo-1",
+            "module.repos.github_repository_file.main",
+            "module.repos.github_repository_file.readme"
+          ]
+        }
+      ]
+    }
+  ],
+  "check_results": [
+    {
+      "object_kind": "var",
+      "config_addr": "module.repos.var.repos",
+      "status": "pass",
+      "objects": [
+        {
+          "object_addr": "module.repos[\"dev\"].var.repos",
+          "status": "pass"
+        },
+        {
+          "object_addr": "module.repos[\"prod\"].var.repos",
+          "status": "pass"
+        }
+      ]
+    },
+    {
+      "object_kind": "var",
+      "config_addr": "module.repos.var.repo_max",
+      "status": "pass",
+      "objects": [
+        {
+          "object_addr": "module.repos[\"prod\"].var.repo_max",
+          "status": "pass"
+        },
+        {
+          "object_addr": "module.repos[\"dev\"].var.repo_max",
+          "status": "pass"
+        }
+      ]
+    },
+    {
+      "object_kind": "var",
+      "config_addr": "module.repos.var.env",
+      "status": "pass",
+      "objects": [
+        {
+          "object_addr": "module.repos[\"dev\"].var.env",
+          "status": "pass"
+        },
+        {
+          "object_addr": "module.repos[\"prod\"].var.env",
+          "status": "pass"
+        }
+      ]
+    }
+  ]
+}
