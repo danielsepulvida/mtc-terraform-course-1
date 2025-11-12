@@ -1,7 +1,16 @@
-# resource "local_file" "repos" {
-#   content  = jsonencode(local.repos)
-#   filename = "${path.module}/repos.json"
-# }
+data "terraform_remote_state" "repos" {
+  backend = "remote"
+  config = {
+    organization = "Faith83"
+    workspaces = {
+      name = "mtc-repos"
+    }
+  }
+}
+
+local {
+  repos = { for k, v in data.terraform_remote_state.repos.outputs.clones_urls["prod"].clone-urls : k => v }
+}
 
 module "repos" {
   source   = "./modules/dev-repos"
@@ -9,7 +18,7 @@ module "repos" {
   repo_max = 9
   env      = each.key
   #repos            = jsondecode(file("repos.json"))
-  repos            = { for v in csvdecode(file("repos.csv")) : v["environment"] => { for x, y in v : x => lower(y) }}
+  repos            = { for v in csvdecode(file("repos.csv")) : v["environment"] => { for x, y in v : x => lower(y) } }
   run_provisioners = false
 }
 
